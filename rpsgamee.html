@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCK, PAPER, SCISSORS GAME</title>
+    <style>
+        .screen {
+        text-align: right;
+        width: 300px;;
+        height: 70px;
+        background-color: rgb(0, 0, 0);
+        color: white;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size:larger;
+      }
+    </style>
+</head>
+<body>
+    <div>
+        <!--= prompt('pick a sign: ').toLowerCase()-->
+        <h3>CHOOSE ROCK, PAPER OR SCISSORS</h3>
+        <img src="New folder/rock .jpeg" alt="" onclick="play(1)">
+        <img src="New folder/paper .jpeg" alt="" onclick="play(2)">
+        <img src="New folder/scissors.jpeg" alt="" onclick="play(3)">
+        <div class="screen" id="screen"></div>
+        
+    </div>
+</body>
+
+<script>
+    
+
+function play(n){
+
+    let random = Math.floor(Math.random() * 3) + 1;
+    var comp_sign;
+    var your_sign;
+    
+
+    if (random == 1){
+        comp_sign = 'rock';
+    }
+    else if (random == 2){
+        comp_sign = 'paper';
+    }
+    else{
+        comp_sign = 'scissors';
+    }
+
+    if (n == 1){
+        your_sign = 'rock';
+    }
+    else if (n == 2){
+        your_sign = 'paper';
+    }
+    else {
+        your_sign = 'scissors';
+    }
+
+    console.log(comp_sign);
+    console.log(your_sign);
+
+    var screen = document.getElementById('screen');
+
+    if (your_sign == comp_sign){
+        screen.innerHTML = 'Draw';
+    
+    }
+    else if (your_sign == 'rock' & comp_sign == 'paper'){
+        screen.innerHTML =  'You Lose';
+
+    
+    }
+    else if (your_sign == 'rock' & comp_sign == 'scissors'){
+        screen.innerHTML =  'You won';;
+
+        
+        
+    }
+
+    else if (your_sign == 'paper' & comp_sign == 'rock') {
+        screen.innerHTML =  'You won';;
+
+
+    }
+    else if (your_sign == 'paper' & comp_sign == 'scissors') {
+        screen.innerHTML =  'You Lose';;
+
+        
+    }
+    else if (your_sign == 'scissors' & comp_sign == 'rock') {
+        screen.innerHTML =  'You Lose';;
+
+    }
+    else if (your_sign == 'scissors' & comp_sign == 'paper') {
+        screen.innerHTML =  'You Lose';
+
+
+    }
+
+    else {
+        screen.innerHTML =  'ERROR';;
+    }
+
+}
+
+
+
+
+
+</script>
+ 
+</html>
